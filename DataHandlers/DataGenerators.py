@@ -76,9 +76,9 @@ class Cifar10KerasDataGenerator(DataHandler):
         :return: None
         """
         num_classes = 10
-        img_rows, img_cols = 32, 32
-        self.x_train = self.x_train.reshape(self.x_train.shape[0], img_rows, img_cols, 3) #*(1/255.0)
-        self.x_test = self.x_test.reshape(self.x_test.shape[0], img_rows, img_cols, 3) #*(1/255.0)
+        img_rows, img_cols = 28, 28
+        self.x_train = self.x_train.reshape(self.x_train.shape[0], img_rows, img_cols, 1) #*(1/255.0)
+        self.x_test = self.x_test.reshape(self.x_test.shape[0], img_rows, img_cols, 1) #*(1/255.0)
 
         # convert class vectors to binary class matrices
         self.y_train = np.eye(num_classes)[self.y_train]
