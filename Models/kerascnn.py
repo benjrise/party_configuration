@@ -8,12 +8,12 @@ from keras.models import Sequential
 
 def save_model_config(folder_configs):
     num_classes = 10
-    img_rows, img_cols = 32,32
+    img_rows, img_cols = 28,28
     
     if K.image_data_format() == 'channels_first':
-        input_shape = (3, img_rows, img_cols)
+        input_shape = (1, img_rows, img_cols)
     else:
-        input_shape = (img_rows, img_cols, 3)
+        input_shape = (img_rows, img_cols, 1)
 
     model = Sequential()
     model.add(Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_uniform', padding='same', input_shape=input_shape))
